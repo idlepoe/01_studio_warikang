@@ -1,4 +1,4 @@
-package com.example.idlep.warikang;
+package com.test.idlep.warikang;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -7,10 +7,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
+import com.test.idlep.warikang.R;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
