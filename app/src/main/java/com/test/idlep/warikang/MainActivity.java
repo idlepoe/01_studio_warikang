@@ -9,12 +9,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.test.idlep.warikang.R;
-
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     TextView txt金額;
     TextView txt人数;
+
+    Button btn一部割引;
+    Button btn金額指定3;
 
     Button btn計算;
     Button btnクリア;
@@ -25,11 +26,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         txt金額 = findViewById(R.id.txt金額);
-        txt人数 = findViewById(R.id.txti人数);
+        txt人数 = findViewById(R.id.txt超お金持ち人数);
 
+        btn一部割引 = findViewById(R.id.btn一部割引);
+        btn金額指定3 = findViewById(R.id.btn金額指定3);
 
         btn計算 = findViewById(R.id.btn計算);
         btnクリア = findViewById(R.id.btnクリア);
+
+        btn一部割引.setOnClickListener(this);
+        btn金額指定3.setOnClickListener(this);
 
         btn計算.setOnClickListener(this);
         btnクリア.setOnClickListener(this);
@@ -112,6 +118,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 intent_act.putExtra("釣銭",釣銭);
                 startActivity(intent_act);
 
+                break;
+
+            case R.id.btn一部割引:
+                Intent intent_act2 = new Intent(getApplicationContext(), IchibuActivity.class);
+                startActivity(intent_act2);
+                break;
+            case R.id.btn金額指定3:
+                Intent intent_act1 = new Intent(getApplicationContext(), SiteiActivity.class);
+                startActivity(intent_act1);
                 break;
             case R.id.btnクリア:
                 txt金額.setText("");

@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/txti人数"
+        android:id="@+id/txt超お金持ち人数"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="112dp"
@@ -38,11 +38,11 @@
         android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
         android:text="合計人数"
-        app:layout_constraintBottom_toTopOf="@+id/txti人数"
-        app:layout_constraintStart_toStartOf="@+id/txti人数" />
+        app:layout_constraintBottom_toTopOf="@+id/txt超お金持ち人数"
+        app:layout_constraintStart_toStartOf="@+id/txt超お金持ち人数" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/txt超お3123"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="12dp"
@@ -59,7 +59,7 @@
         android:layout_marginTop="12dp"
         android:text="クリア"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txti人数" />
+        app:layout_constraintTop_toBottomOf="@+id/txt超お金持ち人数" />
 
     <Button
         android:id="@+id/btn計算"
@@ -70,6 +70,42 @@
         android:layout_marginTop="12dp"
         android:text="計算"
         app:layout_constraintEnd_toStartOf="@+id/btnクリア"
-        app:layout_constraintTop_toBottomOf="@+id/txti人数" />
+        app:layout_constraintTop_toBottomOf="@+id/txt超お金持ち人数" />
+
+    <Button
+        android:id="@+id/btn均等"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:text="均等割勘"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn金額指定3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="28dp"
+        android:layout_marginRight="28dp"
+        android:layout_marginTop="32dp"
+        android:text="金額指定"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn一部割引"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:text="一部割引"
+        app:layout_constraintEnd_toStartOf="@+id/btn金額指定3"
+        app:layout_constraintStart_toEndOf="@+id/btn均等"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

@@ -17,6 +17,10 @@
             </intent-filter>
         </activity>
         <activity android:name="com.test.idlep.warikang.ResultActivity"/>
+        <activity android:name="com.test.idlep.warikang.IchibuActivity"/>
+        <activity android:name="com.test.idlep.warikang.IchibuResultActivity"/>
+        <activity android:name="com.test.idlep.warikang.SiteiActivity"/>
+        <activity android:name="com.test.idlep.warikang.SiteiResultActivity"/>
     </application>
 
 </manifest>

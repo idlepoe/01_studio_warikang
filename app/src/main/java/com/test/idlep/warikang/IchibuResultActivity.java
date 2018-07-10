@@ -7,9 +7,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class ResultActivity extends AppCompatActivity implements View.OnClickListener {
+public class IchibuResultActivity extends AppCompatActivity implements View.OnClickListener {
 
-    TextView txt1人支払額;
+    TextView txt多め;
+    TextView txt少なめ;
     TextView txt合計金額;
     TextView txt集金金額;
     TextView txt計算人数;
@@ -20,9 +21,10 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_result);
+        setContentView(R.layout.ichibu_activity_result);
 
-        txt1人支払額 = findViewById(R.id.txt超お金持ち人数);
+        txt多め = findViewById(R.id.txt多め);
+        txt少なめ = findViewById(R.id.txt超お金持ち人数);
         txt合計金額 = findViewById(R.id.txt合計金額);
         txt集金金額 = findViewById(R.id.txt集金金額);
         txt計算人数 = findViewById(R.id.txt合計人数);
@@ -34,13 +36,17 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
 
         Intent intent = getIntent();
 
-        int p1人支払額 = intent.getIntExtra("p1人支払額", 0);
+
+
+        int 多め = intent.getIntExtra("多め", 0);
+        int 少なめ = intent.getIntExtra("少なめ", 0);
         int 合計金額 = intent.getIntExtra("合計金額", 0);
         int 集金金額 = intent.getIntExtra("集金金額", 0);
         int 計算人数 = intent.getIntExtra("計算人数", 0);
         int 釣銭 = intent.getIntExtra("釣銭", 0);
 
-        txt1人支払額.setText(p1人支払額 + "");
+        txt多め.setText(多め + "");
+        txt少なめ.setText(少なめ + "");
         txt合計金額.setText(合計金額 + "");
         txt集金金額.setText(集金金額 + "");
         txt計算人数.setText(計算人数 + "");

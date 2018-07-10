@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.test.idlep.warikang.MainActivity">
+
+    <EditText
+        android:id="@+id/txt超お金持ち金額"
+        android:layout_width="114dp"
+        android:layout_height="41dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintStart_toEndOf="@+id/txt8"
+        app:layout_constraintTop_toTopOf="@+id/txt超お金持ち人数" />
+
+    <EditText
+        android:id="@+id/txt金額"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="84dp"
+        android:layout_marginRight="84dp"
+        android:layout_marginTop="120dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/txt超お金持ち人数"
+        android:layout_width="45dp"
+        android:layout_height="38dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="52dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintStart_toEndOf="@+id/txt5"
+        app:layout_constraintTop_toBottomOf="@+id/txt金額" />
+
+    <EditText
+        android:id="@+id/txt残り人数"
+        android:layout_width="45dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="56dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintStart_toEndOf="@+id/txt"
+        app:layout_constraintTop_toBottomOf="@+id/txt三番目お金持ち人数" />
+
+    <EditText
+        android:id="@+id/txt三番目お金持ち人数"
+        android:layout_width="45dp"
+        android:layout_height="44dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintStart_toEndOf="@+id/txt7"
+        app:layout_constraintTop_toBottomOf="@+id/txt二番目お金持ち人数" />
+
+    <EditText
+        android:id="@+id/txt二番目お金持ち人数"
+        android:layout_width="45dp"
+        android:layout_height="47dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintStart_toEndOf="@+id/txt6"
+        app:layout_constraintTop_toBottomOf="@+id/txt超お金持ち人数" />
+
+    <EditText
+        android:id="@+id/txt三番目お金持ち金額"
+        android:layout_width="114dp"
+        android:layout_height="44dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintStart_toEndOf="@+id/txt10"
+        app:layout_constraintTop_toBottomOf="@+id/txt二番目お金持ち金額" />
+
+    <EditText
+        android:id="@+id/txt二番目お金持ち金額"
+        android:layout_width="114dp"
+        android:layout_height="44dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintStart_toEndOf="@+id/txt9"
+        app:layout_constraintTop_toBottomOf="@+id/txt超お金持ち金額" />
+
+    <TextView
+        android:id="@+id/txt2"
+        android:layout_width="wrap_content"
+        android:layout_height="26dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginStart="24dp"
+        android:text="支払額/人"
+        app:layout_constraintBottom_toTopOf="@+id/txt超お金持ち金額"
+        app:layout_constraintStart_toStartOf="@+id/txt超お金持ち金額" />
+
+    <TextView
+        android:id="@+id/txt14"
+        android:layout_width="wrap_content"
+        android:layout_height="26dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:text="人数"
+        app:layout_constraintBottom_toTopOf="@+id/txt超お金持ち人数"
+        app:layout_constraintStart_toStartOf="@+id/txt超お金持ち人数" />
+
+    <TextView
+        android:id="@+id/txt13"
+        android:layout_width="wrap_content"
+        android:layout_height="26dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:text="円"
+        app:layout_constraintStart_toEndOf="@+id/txt超お金持ち金額"
+        app:layout_constraintTop_toTopOf="@+id/txt超お金持ち金額" />
+
+    <TextView
+        android:id="@+id/txt11"
+        android:layout_width="wrap_content"
+        android:layout_height="26dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="円"
+        app:layout_constraintStart_toEndOf="@+id/txt三番目お金持ち金額"
+        app:layout_constraintTop_toTopOf="@+id/txt三番目お金持ち金額" />
+
+    <TextView
+        android:id="@+id/txt12"
+        android:layout_width="wrap_content"
+        android:layout_height="26dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="円"
+        app:layout_constraintStart_toEndOf="@+id/txt二番目お金持ち金額"
+        app:layout_constraintTop_toTopOf="@+id/txt二番目お金持ち金額" />
+
+    <TextView
+        android:id="@+id/txt4"
+        android:layout_width="wrap_content"
+        android:layout_height="26dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="円"
+        app:layout_constraintStart_toEndOf="@+id/txt金額"
+        app:layout_constraintTop_toTopOf="@+id/txt金額" />
+
+    <TextView
+        android:id="@+id/txt3"
+        android:layout_width="wrap_content"
+        android:layout_height="26dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:text="人"
+        app:layout_constraintStart_toEndOf="@+id/txt残り人数"
+        app:layout_constraintTop_toTopOf="@+id/txt残り人数" />
+
+    <TextView
+        android:id="@+id/txt10"
+        android:layout_width="wrap_content"
+        android:layout_height="26dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="16dp"
+        android:text="人"
+        app:layout_constraintStart_toEndOf="@+id/txt三番目お金持ち人数"
+        app:layout_constraintTop_toTopOf="@+id/txt三番目お金持ち人数" />
+
+    <TextView
+        android:id="@+id/txt9"
+        android:layout_width="wrap_content"
+        android:layout_height="26dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="16dp"
+        android:text="人"
+        app:layout_constraintStart_toEndOf="@+id/txt二番目お金持ち人数"
+        app:layout_constraintTop_toTopOf="@+id/txt二番目お金持ち人数" />
+
+    <TextView
+        android:id="@+id/txt8"
+        android:layout_width="wrap_content"
+        android:layout_height="26dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="4dp"
+        android:text="人"
+        app:layout_constraintStart_toEndOf="@+id/txt超お金持ち人数"
+        app:layout_constraintTop_toTopOf="@+id/txt超お金持ち人数" />
+
+    <TextView
+        android:id="@+id/txt"
+        android:layout_width="wrap_content"
+        android:layout_height="26dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="28dp"
+        android:text="残り"
+        app:layout_constraintStart_toStartOf="@+id/txt7"
+        app:layout_constraintTop_toBottomOf="@+id/txt7" />
+
+    <TextView
+        android:id="@+id/txt7"
+        android:layout_width="wrap_content"
+        android:layout_height="26dp"
+        android:layout_marginTop="52dp"
+        android:text="三番目お金持ち"
+        app:layout_constraintStart_toStartOf="@+id/txt6"
+        app:layout_constraintTop_toBottomOf="@+id/txt6" />
+
+    <TextView
+        android:id="@+id/txt6"
+        android:layout_width="wrap_content"
+        android:layout_height="26dp"
+        android:layout_marginTop="44dp"
+        android:text="二番目お金持ち"
+        app:layout_constraintStart_toStartOf="@+id/txt5"
+        app:layout_constraintTop_toBottomOf="@+id/txt5" />
+
+    <TextView
+        android:id="@+id/txt5"
+        android:layout_width="wrap_content"
+        android:layout_height="26dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="64dp"
+        android:text="超お金持ち"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt金額" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="合計金額"
+        app:layout_constraintBottom_toTopOf="@+id/txt金額"
+        app:layout_constraintStart_toStartOf="@+id/txt金額" />
+
+    <Button
+        android:id="@+id/btnクリア"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:text="クリア"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btn計算"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:text="計算"
+        app:layout_constraintBottom_toBottomOf="@+id/btnクリア"
+        app:layout_constraintEnd_toStartOf="@+id/btnクリア" />
+
+    <Button
+        android:id="@+id/btn均等"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:text="均等割勘"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn金額指定3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="28dp"
+        android:layout_marginRight="28dp"
+        android:layout_marginTop="32dp"
+        android:text="金額指定"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn一部割引"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:text="一部割引"
+        app:layout_constraintEnd_toStartOf="@+id/btn金額指定3"
+        app:layout_constraintStart_toEndOf="@+id/btn均等"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
