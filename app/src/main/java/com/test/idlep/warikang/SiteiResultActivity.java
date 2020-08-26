@@ -2,12 +2,15 @@ package com.test.idlep.warikang;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.firebase.analytics.FirebaseAnalytics;
+
 public class SiteiResultActivity extends AppCompatActivity implements View.OnClickListener {
+    private FirebaseAnalytics mFirebaseAnalytics;
 
     TextView txt超お金持ち;
     TextView txt二番目お金持ち人数;
@@ -30,7 +33,7 @@ public class SiteiResultActivity extends AppCompatActivity implements View.OnCli
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sitei_result);
-
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
         txt超お金持ち = findViewById(R.id.txt超金持ち人数);
         txt二番目お金持ち人数 = findViewById(R.id.txt超お金持ち人数);
         txt三番目お金持ち人数 = findViewById(R.id.txt三番目お金持ち人数);
@@ -80,6 +83,13 @@ public class SiteiResultActivity extends AppCompatActivity implements View.OnCli
         txt集金金額.setText(集金金額 + "");
         txt計算人数.setText(計算人数 + "");
         txt釣銭.setText(釣銭 + "");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+// screen name must be <= 36 characters
+        mFirebaseAnalytics.setCurrentScreen(this, "CurrentScreen: " + getClass().getSimpleName(), null);
     }
 
     @Override

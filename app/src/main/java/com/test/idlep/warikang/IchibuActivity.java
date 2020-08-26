@@ -4,12 +4,15 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.firebase.analytics.FirebaseAnalytics;
+
 public class IchibuActivity extends AppCompatActivity implements View.OnClickListener {
+    private FirebaseAnalytics mFirebaseAnalytics;
 
     TextView txt金額;
     TextView txt多め;
@@ -27,7 +30,7 @@ public class IchibuActivity extends AppCompatActivity implements View.OnClickLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ichibu);
-
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
         txt金額 = findViewById(R.id.txt金額);
         txt多め = findViewById(R.id.txt多め);
         txt多めに = findViewById(R.id.txt多めに);
@@ -67,6 +70,13 @@ public class IchibuActivity extends AppCompatActivity implements View.OnClickLis
         String 多めに = txt多めに.getText().toString();
         return 多めに.length() > 0 || 多めに.equalsIgnoreCase("0");
     };
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+// screen name must be <= 36 characters
+        mFirebaseAnalytics.setCurrentScreen(this, "CurrentScreen: " + getClass().getSimpleName(), null);
+    }
 
     @Override
     public void onClick(View v) {
@@ -161,6 +171,15 @@ public class IchibuActivity extends AppCompatActivity implements View.OnClickLis
                     集金金額 = p多めに*多め + p少なめ*少なめ;
                     釣銭 = 集金金額 - 合計金額;
                 }
+
+                Bundle bundle = new Bundle();
+                bundle.putString("多め",p多め+"");
+                bundle.putString("少なめ",p少なめ+"");
+                bundle.putString("合計金額",合計金額+"");
+                bundle.putString("集金金額",集金金額+"");
+                bundle.putString("計算人数",人数+"");
+                bundle.putString("釣銭",釣銭+"");
+                mFirebaseAnalytics.logEvent("IchibuActivity", bundle);
 
                 Intent intent_act = new Intent(getApplicationContext(), IchibuResultActivity.class);
                 intent_act.putExtra("多め",p多め);

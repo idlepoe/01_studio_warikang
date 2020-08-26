@@ -2,12 +2,15 @@ package com.test.idlep.warikang;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.firebase.analytics.FirebaseAnalytics;
+
 public class ResultActivity extends AppCompatActivity implements View.OnClickListener {
+    private FirebaseAnalytics mFirebaseAnalytics;
 
     TextView txt1人支払額;
     TextView txt合計金額;
@@ -21,7 +24,7 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
-
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
         txt1人支払額 = findViewById(R.id.txt超お金持ち人数);
         txt合計金額 = findViewById(R.id.txt合計金額);
         txt集金金額 = findViewById(R.id.txt集金金額);
@@ -54,5 +57,12 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
                 this.finish();
                 break;
         }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+// screen name must be <= 36 characters
+        mFirebaseAnalytics.setCurrentScreen(this, "CurrentScreen: " + getClass().getSimpleName(), null);
     }
 }

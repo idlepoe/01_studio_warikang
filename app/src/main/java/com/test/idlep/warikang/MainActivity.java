@@ -3,13 +3,17 @@ package com.test.idlep.warikang;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.firebase.analytics.FirebaseAnalytics;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    private FirebaseAnalytics mFirebaseAnalytics;
 
     TextView txt金額;
     TextView txt人数;
@@ -24,6 +28,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
+        mFirebaseAnalytics.setUserProperty("User", "Pizza");
 
         txt金額 = findViewById(R.id.txt金額);
         txt人数 = findViewById(R.id.txt超お金持ち人数);
@@ -46,14 +52,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return 金額.length() > 0 || 金額.equalsIgnoreCase("0");
     }
 
-    ;
-
     public boolean chk人数() {
         String 人数 = txt人数.getText().toString();
         return 人数.length() > 0 || 人数.equalsIgnoreCase("0");
     }
 
-    ;
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // screen name must be <= 36 characters
+        mFirebaseAnalytics.setCurrentScreen(this, "CurrentScreen: " + getClass().getSimpleName(), null);
+    }
 
     @Override
     public void onClick(View v) {
@@ -64,7 +73,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         this);
                 AlertDialog alertDialog;
 
-                boolean error=false;
+                boolean error = false;
 
                 if (!chk金額()) {
                     error = true;
@@ -92,34 +101,40 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                     });
                 }
 
-                if(error){
+                if (error) {
                     alertDialog = alertDialogBuilder.create();
                     alertDialog.show();
                     break;
                 }
 
-                int 金額=Integer.parseInt(txt金額.getText().toString());
+                int 金額 = Integer.parseInt(txt金額.getText().toString());
                 int 人数 = Integer.parseInt(txt人数.getText().toString());
 
 
-                int p1人支払額 = (int) Math.round(金額/人数/100.0)*100;
+                int p1人支払額 = (int) Math.round(金額 / 人数 / 100.0) * 100;
 
                 int 合計金額 = 金額;
-                int 集金金額 = p1人支払額*人数;
+                int 集金金額 = p1人支払額 * 人数;
                 int 計算人数 = 人数;
                 int 釣銭 = 集金金額 - 合計金額;
 
+                Bundle bundle = new Bundle();
+                bundle.putString("p1人支払額", p1人支払額 + "");
+                bundle.putString("合計金額", 合計金額 + "");
+                bundle.putString("集金金額", 集金金額 + "");
+                bundle.putString("計算人数", 人数 + "");
+                bundle.putString("釣銭", 釣銭 + "");
+                mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SIGN_UP, bundle);
 
                 Intent intent_act = new Intent(getApplicationContext(), ResultActivity.class);
-                intent_act.putExtra("p1人支払額",p1人支払額);
-                intent_act.putExtra("合計金額",合計金額);
-                intent_act.putExtra("集金金額",集金金額);
-                intent_act.putExtra("計算人数",人数);
-                intent_act.putExtra("釣銭",釣銭);
+                intent_act.putExtra("p1人支払額", p1人支払額);
+                intent_act.putExtra("合計金額", 合計金額);
+                intent_act.putExtra("集金金額", 集金金額);
+                intent_act.putExtra("計算人数", 人数);
+                intent_act.putExtra("釣銭", 釣銭);
                 startActivity(intent_act);
 
                 break;
-
             case R.id.btn一部割引:
                 Intent intent_act2 = new Intent(getApplicationContext(), IchibuActivity.class);
                 startActivity(intent_act2);
