@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -14,6 +15,7 @@ import com.google.firebase.analytics.FirebaseAnalytics;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private FirebaseAnalytics mFirebaseAnalytics;
+    private static final String TAG = MainActivity.class.getSimpleName();
 
     TextView txt金額;
     TextView txt人数;
@@ -28,6 +30,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Log.e(TAG,"activity_main");
+
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
         mFirebaseAnalytics.setUserProperty("User", "Pizza");
 
@@ -124,7 +128,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 bundle.putString("集金金額", 集金金額 + "");
                 bundle.putString("計算人数", 人数 + "");
                 bundle.putString("釣銭", 釣銭 + "");
-                mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SIGN_UP, bundle);
+                mFirebaseAnalytics.logEvent("均等割勘", bundle);
 
                 Intent intent_act = new Intent(getApplicationContext(), ResultActivity.class);
                 intent_act.putExtra("p1人支払額", p1人支払額);

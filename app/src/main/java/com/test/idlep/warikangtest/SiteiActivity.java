@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -13,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.analytics.FirebaseAnalytics;
 
 public class SiteiActivity extends AppCompatActivity implements View.OnClickListener {
+    private static final String TAG = MainActivity.class.getSimpleName();
     private FirebaseAnalytics mFirebaseAnalytics;
 
     TextView txt金額;
@@ -36,6 +38,8 @@ public class SiteiActivity extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sitei);
+        Log.d(TAG,"sitei");
+
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
         txt金額 = findViewById(R.id.txt金額);
         txtお金持ち人数 = findViewById(R.id.txt超お金持ち人数);
@@ -270,7 +274,7 @@ public class SiteiActivity extends AppCompatActivity implements View.OnClickList
                 bundle.putString("合計金額", 金額 + "");
                 bundle.putString("集金金額", 集金金額 + "");
                 bundle.putString("計算人数", 残り人数 + お金持ち人数 + 二番目お金持ち人数 + 三番目お金持ち人数 + "");
-                mFirebaseAnalytics.logEvent("SiteiActivity", bundle);
+                mFirebaseAnalytics.logEvent("金額指定", bundle);
 
                 Intent intent_act = new Intent(getApplicationContext(), SiteiResultActivity.class);
                 intent_act.putExtra("お金持ち人数", お金持ち人数);

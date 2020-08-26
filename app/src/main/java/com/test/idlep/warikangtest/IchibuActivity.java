@@ -5,6 +5,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -13,6 +15,7 @@ import com.google.firebase.analytics.FirebaseAnalytics;
 
 public class IchibuActivity extends AppCompatActivity implements View.OnClickListener {
     private FirebaseAnalytics mFirebaseAnalytics;
+    private static final String TAG = MainActivity.class.getSimpleName();
 
     TextView txt金額;
     TextView txt多め;
@@ -30,6 +33,8 @@ public class IchibuActivity extends AppCompatActivity implements View.OnClickLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ichibu);
+        Log.d(TAG,"ichibu");
+
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
         txt金額 = findViewById(R.id.txt金額);
         txt多め = findViewById(R.id.txt多め);
@@ -179,7 +184,7 @@ public class IchibuActivity extends AppCompatActivity implements View.OnClickLis
                 bundle.putString("集金金額",集金金額+"");
                 bundle.putString("計算人数",人数+"");
                 bundle.putString("釣銭",釣銭+"");
-                mFirebaseAnalytics.logEvent("IchibuActivity", bundle);
+                mFirebaseAnalytics.logEvent("一部割引", bundle);
 
                 Intent intent_act = new Intent(getApplicationContext(), IchibuResultActivity.class);
                 intent_act.putExtra("多め",p多め);
