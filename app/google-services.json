@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "23823252123",
+    "firebase_url": "https://gomi-209610.firebaseio.com",
+    "project_id": "gomi-209610",
+    "storage_bucket": "gomi-209610.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:23823252123:android:fd028518afb47ef6afe43e",
+        "android_client_info": {
+          "package_name": "com.test.idlep.warikangtest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "23823252123-74qb9dr068qusbbi41ahueqinck8c4ck.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmi1FBdwsW6AIMxCaP4qbg16nGkxbPNgk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "23823252123-74qb9dr068qusbbi41ahueqinck8c4ck.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.test.idlep.warikang">
+    package="com.test.idlep.warikangtest">
 
     <application
         android:allowBackup="true"
@@ -9,18 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.test.idlep.warikang.MainActivity">
+        <activity android:name="com.test.idlep.warikangtest.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.test.idlep.warikang.ResultActivity"/>
-        <activity android:name="com.test.idlep.warikang.IchibuActivity"/>
-        <activity android:name="com.test.idlep.warikang.IchibuResultActivity"/>
-        <activity android:name="com.test.idlep.warikang.SiteiActivity"/>
-        <activity android:name="com.test.idlep.warikang.SiteiResultActivity"/>
+        <activity android:name="com.test.idlep.warikangtest.ResultActivity"/>
+        <activity android:name="com.test.idlep.warikangtest.IchibuActivity"/>
+        <activity android:name="com.test.idlep.warikangtest.IchibuResultActivity"/>
+        <activity android:name="com.test.idlep.warikangtest.SiteiActivity"/>
+        <activity android:name="com.test.idlep.warikangtest.SiteiResultActivity"/>
     </application>
 
 </manifest>

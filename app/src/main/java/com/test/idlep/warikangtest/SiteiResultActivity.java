@@ -1,4 +1,4 @@
-package com.test.idlep.warikang;
+package com.test.idlep.warikangtest;
 
 import android.content.Intent;
 import android.os.Bundle;

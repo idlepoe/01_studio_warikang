@@ -1,4 +1,4 @@
-package com.test.idlep.warikang;
+package com.test.idlep.warikangtest;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
