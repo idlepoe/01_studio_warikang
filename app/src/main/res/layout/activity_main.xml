@@ -73,6 +73,17 @@
         app:layout_constraintTop_toBottomOf="@+id/txt超お金持ち人数" />
 
     <Button
+        android:id="@+id/btnエラー"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="104dp"
+        android:text="エラー"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn計算" />
+
+    <Button
         android:id="@+id/btn均等"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

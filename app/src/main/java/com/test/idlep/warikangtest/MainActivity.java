@@ -28,14 +28,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button btn計算;
     Button btnクリア;
 
+    Button btnエラー;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Log.e(TAG,"activity_main");
-
-        FirebaseApp.initializeApp(getApplicationContext());
-        FirebaseCrashlytics.getInstance().setCrashlyticsCollectionEnabled(true);
 
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
         mFirebaseAnalytics.setUserProperty("User", "Pizza");
@@ -48,12 +47,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         btn計算 = findViewById(R.id.btn計算);
         btnクリア = findViewById(R.id.btnクリア);
+        
+        btnエラー = findViewById(R.id.btnエラー);
 
         btn一部割引.setOnClickListener(this);
         btn金額指定3.setOnClickListener(this);
 
         btn計算.setOnClickListener(this);
         btnクリア.setOnClickListener(this);
+
+        btnエラー.setOnClickListener(this);
     }
 
     public boolean chk金額() {
@@ -156,6 +159,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 txt金額.setText("");
                 txt人数.setText("");
                 break;
+            case R.id.btnエラー:
+                throw new RuntimeException("Test Crash"); // Force a crash
 
         }
     }
