@@ -7,6 +7,18 @@
     tools:context="com.test.idlep.warikangtest.MainActivity">
 
     <Button
+        android:id="@+id/btnエラー3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="エラー"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn計算"
+        app:layout_constraintVertical_bias="0.647" />
+
+    <Button
         android:id="@+id/btn金額指定"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

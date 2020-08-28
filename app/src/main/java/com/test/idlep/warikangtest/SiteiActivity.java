@@ -34,6 +34,9 @@ public class SiteiActivity extends AppCompatActivity implements View.OnClickList
     Button btn計算;
     Button btnクリア;
 
+    Button btnエラー;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,11 +61,20 @@ public class SiteiActivity extends AppCompatActivity implements View.OnClickList
         btn計算 = findViewById(R.id.btn計算);
         btnクリア = findViewById(R.id.btnクリア);
 
+        btnエラー = findViewById(R.id.btnエラー5);
+
         btn一部割引.setOnClickListener(this);
         btn均等.setOnClickListener(this);
 
         btn計算.setOnClickListener(this);
         btnクリア.setOnClickListener(this);
+
+        btnエラー.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                throw new NumberFormatException("指定エラー");
+            }
+        });
     }
 
     public boolean chk金額() {

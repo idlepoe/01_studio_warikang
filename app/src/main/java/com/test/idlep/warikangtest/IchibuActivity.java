@@ -29,6 +29,9 @@ public class IchibuActivity extends AppCompatActivity implements View.OnClickLis
     Button btn計算;
     Button btnクリア;
 
+    Button btnエラー;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,11 +51,20 @@ public class IchibuActivity extends AppCompatActivity implements View.OnClickLis
         btn計算 = findViewById(R.id.btn計算);
         btnクリア = findViewById(R.id.btnクリア);
 
+        btnエラー = findViewById(R.id.btnエラー3);
+
         btn均等.setOnClickListener(this);
         btn金額指定.setOnClickListener(this);
 
         btn計算.setOnClickListener(this);
         btnクリア.setOnClickListener(this);
+
+        btnエラー.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                throw new ArrayIndexOutOfBoundsException("一部エラー");
+            }
+        });
     }
 
     public boolean chk金額() {

@@ -32,6 +32,8 @@ public class SiteiResultActivity extends AppCompatActivity implements View.OnCli
 
     Button btn戻る;
 
+    Button btnエラー;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,6 +57,8 @@ public class SiteiResultActivity extends AppCompatActivity implements View.OnCli
         txt釣銭 = findViewById(R.id.txt釣銭);
 
         btn戻る = findViewById(R.id.btn戻る);
+
+        btnエラー = findViewById(R.id.btnエラー6);
 
         btn戻る.setOnClickListener(this);
 
@@ -88,6 +92,13 @@ public class SiteiResultActivity extends AppCompatActivity implements View.OnCli
         txt集金金額.setText(集金金額 + "");
         txt計算人数.setText(計算人数 + "");
         txt釣銭.setText(釣銭 + "");
+
+        btnエラー.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                throw new NumberFormatException("指定結果エラー");
+            }
+        });
     }
 
     @Override

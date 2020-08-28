@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         btn計算 = findViewById(R.id.btn計算);
         btnクリア = findViewById(R.id.btnクリア);
-        
+
         btnエラー = findViewById(R.id.btnエラー);
 
         btn一部割引.setOnClickListener(this);
@@ -160,7 +160,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 txt人数.setText("");
                 break;
             case R.id.btnエラー:
-                throw new RuntimeException("Test Crash"); // Force a crash
+                throw new RuntimeException("均等エラー"); // Force a crash
 
         }
     }

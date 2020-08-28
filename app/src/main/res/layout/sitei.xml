@@ -6,6 +6,18 @@
     android:layout_height="match_parent"
     tools:context="com.test.idlep.warikangtest.MainActivity">
 
+    <Button
+        android:id="@+id/btnエラー5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="エラー"
+        app:layout_constraintBottom_toTopOf="@+id/btn計算"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.873" />
+
     <EditText
         android:id="@+id/txt超お金持ち金額"
         android:layout_width="114dp"

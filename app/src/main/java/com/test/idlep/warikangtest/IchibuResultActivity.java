@@ -24,6 +24,8 @@ public class IchibuResultActivity extends AppCompatActivity implements View.OnCl
 
     Button btn戻る;
 
+    Button btnエラー;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,11 +42,11 @@ public class IchibuResultActivity extends AppCompatActivity implements View.OnCl
 
         btn戻る = findViewById(R.id.btn戻る);
 
+        btnエラー = findViewById(R.id.btnエラー4);
+
         btn戻る.setOnClickListener(this);
 
         Intent intent = getIntent();
-
-
 
         int 多め = intent.getIntExtra("多め", 0);
         int 少なめ = intent.getIntExtra("少なめ", 0);
@@ -59,6 +61,13 @@ public class IchibuResultActivity extends AppCompatActivity implements View.OnCl
         txt集金金額.setText(集金金額 + "");
         txt計算人数.setText(計算人数 + "");
         txt釣銭.setText(釣銭 + "");
+
+        btnエラー.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                throw new ArrayIndexOutOfBoundsException("一部結果エラー");
+            }
+        });
     }
 
     @Override

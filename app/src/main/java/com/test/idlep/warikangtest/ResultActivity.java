@@ -23,6 +23,9 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
 
     Button btn戻る;
 
+    Button btnエラー;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +38,8 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
         txt集金金額 = findViewById(R.id.txt集金金額);
         txt計算人数 = findViewById(R.id.txt合計人数);
         txt釣銭 = findViewById(R.id.txt釣銭);
+
+        btnエラー = findViewById(R.id.btnエラー2);
 
         btn戻る = findViewById(R.id.btn戻る);
 
@@ -53,6 +58,13 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
         txt集金金額.setText(集金金額 + "");
         txt計算人数.setText(計算人数 + "");
         txt釣銭.setText(釣銭 + "");
+
+        btnエラー.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                throw new NumberFormatException("均等結果エラー");
+            }
+        });
     }
 
     @Override
