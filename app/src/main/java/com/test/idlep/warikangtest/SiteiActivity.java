@@ -140,7 +140,7 @@ public class SiteiActivity extends AppCompatActivity implements View.OnClickList
     protected void onResume() {
         super.onResume();
 // screen name must be <= 36 characters
-        mFirebaseAnalytics.setCurrentScreen(this, "CurrentScreen: " + getClass().getSimpleName(), null);
+        mFirebaseAnalytics.setCurrentScreen(this, "指定", this.getClass().getSimpleName());
     }
 
     @Override

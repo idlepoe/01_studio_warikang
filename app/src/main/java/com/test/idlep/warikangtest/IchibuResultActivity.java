@@ -83,7 +83,7 @@ public class IchibuResultActivity extends AppCompatActivity implements View.OnCl
     protected void onResume() {
         super.onResume();
 // screen name must be <= 36 characters
-        mFirebaseAnalytics.setCurrentScreen(this, "CurrentScreen: " + getClass().getSimpleName(), null);
+        mFirebaseAnalytics.setCurrentScreen(this, "一部結果", this.getClass().getSimpleName());
     }
 
 }

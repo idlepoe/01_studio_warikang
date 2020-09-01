@@ -80,6 +80,6 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
     protected void onResume() {
         super.onResume();
 // screen name must be <= 36 characters
-        mFirebaseAnalytics.setCurrentScreen(this, "CurrentScreen: " + getClass().getSimpleName(), null);
+        mFirebaseAnalytics.setCurrentScreen(this, "均等結果", this.getClass().getSimpleName());
     }
 }

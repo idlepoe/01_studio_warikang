@@ -105,7 +105,7 @@ public class SiteiResultActivity extends AppCompatActivity implements View.OnCli
     protected void onResume() {
         super.onResume();
 // screen name must be <= 36 characters
-        mFirebaseAnalytics.setCurrentScreen(this, "CurrentScreen: " + getClass().getSimpleName(), null);
+        mFirebaseAnalytics.setCurrentScreen(this, "指定結果", this.getClass().getSimpleName());
     }
 
     @Override
